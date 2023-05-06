@@ -14,21 +14,23 @@ npm install @y13i/sort-keys
 import { sortKeys } from "@y13i/sort-keys";
 ```
 
-### `sortKeys(object, options?)`
+### Usage
+
+#### `sortKeys(object, option?)`
 
 Returns a new object with sorted keys.
 
-### `object`
+#### `object`
 
 **Type: object**
 
 The object to sort keys of.
 
-### `options`
+#### `option`
 
 **Type: object**
 
-## `depth`
+##### `option.depth`
 
 **Type: number** (1 or greater integer)
 
@@ -36,17 +38,21 @@ The object to sort keys of.
 
 Defines how many times to recursively sort keys in a nested object or an array.
 
-## `prioritize.keys`
+##### `option.prioritize.keys`
 
 **Type: string[]**
 
 If specified, keys in this array will be put at the first.
 
-## `prioritize.primitives`
+##### `option.prioritize.primitives`
 
 **Type: boolean**
 
 If true, primitive values (number, string, boolean, null, undefined) will be put at the first.
+
+### Examples
+
+See [test code](./core/src/index.test.ts) for examples.
 
 ## CLI
 
