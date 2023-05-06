@@ -20,33 +20,39 @@ Returns a new object with sorted keys.
 
 ### `object`
 
-**Type: object**
+Type: `object`
 
 The object to sort keys of.
 
 ### `option`
 
-**Type: object**
+Type: `object`
 
 #### `option.depth`
 
-**Type: number** (1 or greater integer)
+Type: `number` (1 or greater integer)
 
-**Default: Infinity**
+Default: `Infinity`
 
 Defines how many times to recursively sort keys in a nested object or an array.
 
 #### `option.prioritize.keys`
 
-**Type: string[]**
+Type: `string[]`
 
 If specified, keys in this array will be put at the first.
 
 #### `option.prioritize.primitives`
 
-**Type: boolean**
+Type: `boolean`
 
 If true, primitive values (number, string, boolean, null, undefined) will be put at the first.
+
+#### `option.compare`
+
+Type: Function, `(object) => (leftKey: string, rightKey: string) => number`
+
+A higher-order function that returns a [comparator function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
 
 ## Examples
 
