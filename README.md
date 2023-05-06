@@ -1,6 +1,10 @@
 # sort-keys
 
+[![npm version](https://badge.fury.io/js/@y13i%2Fsort-keys.svg)](https://badge.fury.io/js/@y13i%2Fsort-keys)
+
 Sort the keys of an object.
+
+[Live Demo](https://utils.y13i.app/sort-keys)
 
 ## Installation
 
