@@ -1,4 +1,4 @@
-name: publish-core
+name: publish
 on:
   release:
     types:
@@ -16,7 +16,7 @@ jobs:
         working-directory: ./core
       - run: npm run build
         working-directory: ./core
-      - run: npm publish
+      - run: npm publish --access=public
         working-directory: ./core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
