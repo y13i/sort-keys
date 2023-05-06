@@ -1,0 +1,14 @@
+{
+  "plugins": ["prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": 2
+  },
+  "env": {
+    "node": true
+  }
+}
