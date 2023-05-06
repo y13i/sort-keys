@@ -4,7 +4,7 @@ on:
     types:
       - published
 jobs:
-  publish-core:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,10 +13,7 @@ jobs:
           node-version: 20.x
           registry-url: "https://registry.npmjs.org"
       - run: npm ci
-        working-directory: ./core
       - run: npm run build
-        working-directory: ./core
       - run: npm publish --access=public
-        working-directory: ./core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
