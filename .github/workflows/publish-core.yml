@@ -17,5 +17,6 @@ jobs:
       - run: npm run build
         working-directory: ./core
       - run: npm publish
+        working-directory: ./core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
