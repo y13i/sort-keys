@@ -85,7 +85,7 @@ export function sortKeys<T extends Record<string, unknown>>(
         ...acc,
         [key]: recurse(value2, nextRecursionOption),
       };
-    }, {} as T);
+    }, {});
   }
 
   return recurse(object, { ...option, depth: option.depth ?? Infinity }) as T;
