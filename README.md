@@ -50,7 +50,7 @@ If true, primitive values (number, string, boolean, null, undefined) will be put
 
 ## Examples
 
-See [test code](./core/src/index.test.ts) for examples.
+See [test code](./src/index.test.ts) for examples.
 
 ## CLI
 
