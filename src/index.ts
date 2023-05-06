@@ -83,7 +83,7 @@ export function sortKeys<T extends Record<string, unknown>>(
 
       return {
         ...acc,
-        [key]: sortKeys(value2 as Record<string, unknown>, nextRecursionOption),
+        [key]: recurse(value2, nextRecursionOption),
       };
     }, {} as T);
   }
