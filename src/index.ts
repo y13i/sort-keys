@@ -27,7 +27,7 @@ export function sortKeys<T extends Record<string, unknown>>(
   option: Option = {}
 ): T {
   const compare: CompareFunctionGenerator =
-    option.compare ||
+    option.compare ??
     ((object2) => (leftKey, rightKey) => {
       if (option.prioritize?.keys) {
         const leftKeyIndex = option.prioritize.keys.indexOf(leftKey);
