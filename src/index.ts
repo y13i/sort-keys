@@ -12,7 +12,7 @@ type Option = {
   };
 };
 
-function isPremitive(value: unknown): boolean {
+function isPrimitive(value: unknown): boolean {
   return (
     typeof value === "string" ||
     typeof value === "number" ||
@@ -27,7 +27,7 @@ export function sortKeys<T extends Record<string, unknown>>(
   option: Option = {}
 ): T {
   const compare: CompareFunctionGenerator =
-    option.compare ||
+    option.compare ??
     ((object2) => (leftKey, rightKey) => {
       if (option.prioritize?.keys) {
         const leftKeyIndex = option.prioritize.keys.indexOf(leftKey);
@@ -45,8 +45,8 @@ export function sortKeys<T extends Record<string, unknown>>(
       }
 
       if (option.prioritize?.primitives) {
-        const leftIsPrimitive = isPremitive(object2[leftKey]);
-        const rightIsPrimitive = isPremitive(object2[rightKey]);
+        const leftIsPrimitive = isPrimitive(object2[leftKey]);
+        const rightIsPrimitive = isPrimitive(object2[rightKey]);
 
         if (leftIsPrimitive) {
           if (!rightIsPrimitive) {
@@ -64,7 +64,7 @@ export function sortKeys<T extends Record<string, unknown>>(
     value: unknown,
     option2: Option & { depth: number }
   ): unknown {
-    if (option2.depth === 0 || isPremitive(value)) return value;
+    if (option2.depth === 0 || isPrimitive(value)) return value;
 
     const nextRecursionOption = { ...option2, depth: option2.depth - 1 };
 
