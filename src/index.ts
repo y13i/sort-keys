@@ -31,10 +31,12 @@ export function sortKeys<T extends Record<string, unknown>>(object: T, option: O
         if (leftKeyIndex !== -1) {
           if (rightKeyIndex !== -1) {
             return leftKeyIndex - rightKeyIndex;
-          } else {
-            return -1;
           }
-        } else if (rightKeyIndex !== -1) {
+
+          return -1;
+        }
+
+        if (rightKeyIndex !== -1) {
           return 1;
         }
       }
@@ -70,14 +72,11 @@ export function sortKeys<T extends Record<string, unknown>>(object: T, option: O
 
     keys.sort(compare(object2));
 
-    return keys.reduce((acc, key) => {
-      const value2 = object2[key];
-
-      return {
-        ...acc,
-        [key]: recurse(value2, nextRecursionOption),
-      };
-    }, {} as T);
+    return Object.fromEntries(
+      keys.map((key) => {
+        return [key, recurse(object2[key], nextRecursionOption)];
+      }),
+    );
   }
 
   return recurse(object, { ...option, depth: option.depth ?? Number.POSITIVE_INFINITY }) as T;
