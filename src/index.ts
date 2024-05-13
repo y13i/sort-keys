@@ -1,6 +1,4 @@
-type CompareFunctionGenerator = (
-  object: Record<string, unknown>
-) => (leftKey: string, rightKey: string) => number;
+type CompareFunctionGenerator = (object: Record<string, unknown>) => (leftKey: string, rightKey: string) => number;
 
 type Option = {
   depth?: number;
@@ -22,10 +20,7 @@ function isPrimitive(value: unknown): boolean {
   );
 }
 
-export function sortKeys<T extends Record<string, unknown>>(
-  object: T,
-  option: Option = {}
-): T {
+export function sortKeys<T extends Record<string, unknown>>(object: T, option: Option = {}): T {
   const compare: CompareFunctionGenerator =
     option.compare ??
     ((object2) => (leftKey, rightKey) => {
@@ -60,10 +55,7 @@ export function sortKeys<T extends Record<string, unknown>>(
       return leftKey.localeCompare(rightKey);
     });
 
-  function recurse(
-    value: unknown,
-    option2: Option & { depth: number }
-  ): unknown {
+  function recurse(value: unknown, option2: Option & { depth: number }): unknown {
     if (option2.depth === 0 || isPrimitive(value)) return value;
 
     const nextRecursionOption = { ...option2, depth: option2.depth - 1 };
@@ -88,5 +80,5 @@ export function sortKeys<T extends Record<string, unknown>>(
     }, {} as T);
   }
 
-  return recurse(object, { ...option, depth: option.depth ?? Infinity }) as T;
+  return recurse(object, { ...option, depth: option.depth ?? Number.POSITIVE_INFINITY }) as T;
 }

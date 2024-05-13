@@ -16,17 +16,11 @@
     "type": "git",
     "url": "git+https://github.com/y13i/sort-keys.git"
   },
-  "keywords": [
-    "sort",
-    "keys",
-    "object"
-  ],
+  "keywords": ["sort", "keys", "object"],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
+  "files": ["dist/**/*"],
   "scripts": {
     "test": "jest",
     "watch": "jest --watch",
