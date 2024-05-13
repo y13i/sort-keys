@@ -199,7 +199,7 @@ data:
           "stringData",
         ],
       },
-    })
+    }),
   );
 
   expect(result).toEqual(output);
