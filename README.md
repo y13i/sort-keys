@@ -22,17 +22,17 @@ import { sortKeys } from "@y13i/sort-keys";
 
 Returns a new object with sorted keys.
 
-### `object`
+#### `object`
 
 Type: `object`
 
 The object to sort keys of.
 
-### `option`
+#### `option`
 
 Type: `object`
 
-#### `option.depth`
+##### `option.depth`
 
 Type: `number` (1 or greater integer)
 
@@ -40,19 +40,19 @@ Default: `Infinity`
 
 Defines how many times to recursively sort keys in a nested object or an array.
 
-#### `option.prioritize.keys`
+##### `option.prioritize.keys`
 
 Type: `string[]`
 
 If specified, keys in this array will be put at the first.
 
-#### `option.prioritize.primitives`
+##### `option.prioritize.primitives`
 
 Type: `boolean`
 
 If true, primitive values (number, string, boolean, null, undefined) will be put at the first.
 
-#### `option.compare`
+##### `option.compare`
 
 Type: Function, `(object) => (leftKey: string, rightKey: string) => number`
 
