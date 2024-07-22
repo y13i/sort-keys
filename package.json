@@ -41,7 +41,7 @@
     "js-yaml": "^4.1.0",
     "npm-run-all2": "6.2.2",
     "ts-jest": "29.2.3",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "engines": {
     "node": ">=16.20.0"
