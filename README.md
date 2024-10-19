@@ -4,7 +4,8 @@
 
 Sort the keys of an object.
 
-[Live Demo](https://utils.y13i.app/sort-keys)
+- [Live Demo](https://utils.y13i.app/sort-keys)
+- [Benchmark](https://gist.github.com/y13i/94615a038d591918bc41a004aa65e685)
 
 ## Installation
 
