@@ -44,7 +44,7 @@ function recurse(value: unknown, option: Option & { depth: number; compare: Comp
 }
 
 function getDefaultCompare(option: Option): CompareFunctionGenerator {
-  return (object2) => (leftKey, rightKey) => {
+  return (object) => (leftKey, rightKey) => {
     if (option.prioritize?.keys) {
       const leftKeyIndex = option.prioritize.keys.indexOf(leftKey);
       const rightKeyIndex = option.prioritize.keys.indexOf(rightKey);
@@ -63,8 +63,8 @@ function getDefaultCompare(option: Option): CompareFunctionGenerator {
     }
 
     if (option.prioritize?.primitives) {
-      const leftIsPrimitive = isPrimitive(object2[leftKey]);
-      const rightIsPrimitive = isPrimitive(object2[rightKey]);
+      const leftIsPrimitive = isPrimitive(object[leftKey]);
+      const rightIsPrimitive = isPrimitive(object[rightKey]);
 
       if (leftIsPrimitive) {
         if (!rightIsPrimitive) {
