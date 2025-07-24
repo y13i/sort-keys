@@ -31,10 +31,7 @@ function recurse(value: unknown, option: Option & { depth: number; compare: Comp
 
   const object = value as Record<string, unknown>;
 
-  // TODO: Use .toSorted() after dropping support for Node 18
-  // const keys = Object.keys(object).toSorted(option.compare(object));
-  const keys = Object.keys(object);
-  keys.sort(option.compare(object));
+  const keys = Object.keys(object).toSorted(option.compare(object));
 
   return Object.fromEntries(
     keys.map((key) => {
