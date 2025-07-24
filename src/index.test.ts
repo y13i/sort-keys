@@ -1,5 +1,5 @@
-import "jest";
 import { dump, load } from "js-yaml";
+import { describe, expect, it, test } from "vitest";
 
 import { sortKeys } from ".";
 
