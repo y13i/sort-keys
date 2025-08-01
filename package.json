@@ -43,7 +43,7 @@
     "@vitest/ui": "^3.2.4",
     "js-yaml": "^4.1.0",
     "npm-run-all2": "8.0.4",
-    "typescript": "5.8.3",
+    "typescript": "5.9.2",
     "vitest": "^3.2.4"
   },
   "engines": {
