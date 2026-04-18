@@ -125,7 +125,7 @@ describe("sortKeys()", () => {
           expect(Object.keys(result)).toEqual(["b", "d", "a", "c"]);
         });
 
-        it("should prioritize prioritize.keys even if it's a non-premitive", () => {
+        it("should prioritize prioritize.keys even if it's a non-primitive", () => {
           const result = sortKeys(original, {
             prioritize: {
               keys: ["c"],
