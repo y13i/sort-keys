@@ -4,6 +4,7 @@
 	"files": {
 		"includes": [
 			"**",
+			"!**/package-lock.json",
 			"!**/node_modules",
 			"!**/dist",
 			"!/nix/store",
