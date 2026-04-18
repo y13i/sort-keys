@@ -31,7 +31,7 @@
     "test": "vitest run",
     "watch": "vitest",
     "build": "npm-run-all -s build:cjs build:esm build:types",
-    "build:cjs": "tsc --project tsconfig.build.json --module commonjs --moduleResolution Node --target es2015 --outDir ./dist/cjs",
+    "build:cjs": "tsc --project tsconfig.build.json --module esnext --moduleResolution bundler --target es2015 --outDir ./dist/cjs",
     "build:esm": "tsc --project tsconfig.build.json --module NodeNext --target esnext --outDir ./dist/esm",
     "build:types": "tsc --project tsconfig.build.json --target esnext --declaration true --declarationMap true --emitDeclarationOnly --outDir ./dist/types",
     "lint": "biome check"
@@ -43,7 +43,7 @@
     "@vitest/ui": "4.0.0",
     "js-yaml": "4.1.0",
     "npm-run-all2": "8.0.4",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "4.0.0"
   },
   "engines": {
