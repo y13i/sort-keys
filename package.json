@@ -1,6 +1,6 @@
 {
 	"name": "@y13i/sort-keys",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "Sort keys of an object.",
 	"author": {
 		"name": "Yoriki Honda",
