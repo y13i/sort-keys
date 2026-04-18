@@ -1,54 +1,54 @@
 {
-  "name": "@y13i/sort-keys",
-  "version": "0.4.0",
-  "description": "Sort keys of an object.",
-  "author": {
-    "name": "Yoriki Yamaguchi",
-    "email": "yorikiyamaguchi@gmail.com",
-    "url": "https://y13i.com/"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/y13i/sort-keys",
-  "bugs": {
-    "url": "https://github.com/y13i/sort-keys/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/y13i/sort-keys.git"
-  },
-  "keywords": [
-    "sort",
-    "keys",
-    "object"
-  ],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/types/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
-  "scripts": {
-    "test": "vitest run",
-    "watch": "vitest",
-    "build": "npm-run-all -s build:cjs build:esm build:types",
-    "build:cjs": "tsc --project tsconfig.build.json --module esnext --moduleResolution bundler --target es2015 --outDir ./dist/cjs",
-    "build:esm": "tsc --project tsconfig.build.json --module NodeNext --target esnext --outDir ./dist/esm",
-    "build:types": "tsc --project tsconfig.build.json --target esnext --declaration true --declarationMap true --emitDeclarationOnly --outDir ./dist/types",
-    "lint": "biome check"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.4.12",
-    "@emnapi/core": "1.10.0",
-    "@emnapi/runtime": "1.10.0",
-    "@types/js-yaml": "4.0.9",
-    "@types/node": "24.12.2",
-    "@vitest/ui": "4.1.4",
-    "js-yaml": "4.1.1",
-    "npm-run-all2": "8.0.4",
-    "typescript": "6.0.3",
-    "vitest": "4.1.4"
-  },
-  "engines": {
-    "node": ">=20"
-  }
+	"name": "@y13i/sort-keys",
+	"version": "0.5.0",
+	"description": "Sort keys of an object.",
+	"author": {
+		"name": "Yoriki Honda",
+		"email": "y13i@y13i.com",
+		"url": "https://y13i.com/"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/y13i/sort-keys",
+	"bugs": {
+		"url": "https://github.com/y13i/sort-keys/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/y13i/sort-keys.git"
+	},
+	"keywords": [
+		"sort",
+		"keys",
+		"object"
+	],
+	"main": "dist/cjs/index.js",
+	"module": "dist/esm/index.js",
+	"types": "dist/types/index.d.ts",
+	"files": [
+		"dist/**/*"
+	],
+	"scripts": {
+		"test": "vitest run",
+		"watch": "vitest",
+		"build": "npm-run-all -s build:cjs build:esm build:types",
+		"build:cjs": "tsc --project tsconfig.build.json --module esnext --moduleResolution bundler --target es2015 --outDir ./dist/cjs",
+		"build:esm": "tsc --project tsconfig.build.json --module NodeNext --target esnext --outDir ./dist/esm",
+		"build:types": "tsc --project tsconfig.build.json --target esnext --declaration true --declarationMap true --emitDeclarationOnly --outDir ./dist/types",
+		"lint": "biome check"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.12",
+		"@emnapi/core": "1.10.0",
+		"@emnapi/runtime": "1.10.0",
+		"@types/js-yaml": "4.0.9",
+		"@types/node": "24.12.2",
+		"@vitest/ui": "4.1.4",
+		"js-yaml": "4.1.1",
+		"npm-run-all2": "8.0.4",
+		"typescript": "6.0.3",
+		"vitest": "4.1.4"
+	},
+	"engines": {
+		"node": ">=20"
+	}
 }
