@@ -11,13 +11,7 @@ type Option = {
 };
 
 function isPrimitive(value: unknown): boolean {
-  return (
-    typeof value === "string" ||
-    typeof value === "number" ||
-    typeof value === "boolean" ||
-    typeof value === "undefined" ||
-    value === null
-  );
+  return value === null || typeof value !== "object" && typeof value !== "function";
 }
 
 function recurse(value: unknown, option: Option & { depth: number; compare: CompareFunctionGenerator }): unknown {
