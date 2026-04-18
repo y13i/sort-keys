@@ -1,10 +1,10 @@
 {
   "name": "@y13i/sort-keys",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Sort keys of an object.",
   "author": {
-    "name": "Yoriki Yamaguchi",
-    "email": "yorikiyamaguchi@gmail.com",
+    "name": "Yoriki Honda",
+    "email": "y13i@y13i.com",
     "url": "https://y13i.com/"
   },
   "license": "MIT",
