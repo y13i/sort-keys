@@ -7,9 +7,5 @@ Use [devbox](https://www.jetify.com/devbox) to set up the environment (`devbox s
 ## Commands
 
 - **Test**: `npm test` (Vitest, single run) / `npm run watch` (watch mode)
-- **Build**: `npm run build` — compiles CJS + ESM + type declarations
+- **Build**: `npm run build` — compiles ESM + type declarations into `dist/`
 - **Lint**: `npm run lint` (Biome)
-
-## Build output
-
-The package ships dual CJS and ESM builds. `npm run build` runs three sub-steps sequentially: `build:cjs`, `build:esm`, `build:types`, each using a separate tsconfig.
