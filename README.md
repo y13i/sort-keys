@@ -23,6 +23,11 @@ import { sortKeys } from "@y13i/sort-keys";
 
 Returns a new object with sorted keys.
 
+```js
+sortKeys({ name: "Alice", age: 30, city: "Tokyo" });
+// => { age: 30, city: "Tokyo", name: "Alice" }
+```
+
 #### `object`
 
 Type: `object`
@@ -39,29 +44,60 @@ Type: `number` (1 or greater integer)
 
 Default: `Infinity`
 
-Defines how many times to recursively sort keys in a nested object or an array.
+Limits how many levels deep to recursively sort. `1` sorts only the top-level object; the default `Infinity` sorts all nested objects and arrays.
+
+```js
+sortKeys(
+  { version: 1, author: { name: "Alice", email: "alice@example.com" } },
+  { depth: 1 }
+);
+// => { author: { name: "Alice", email: "alice@example.com" }, version: 1 }
+// (nested object left unsorted)
+```
 
 ##### `option.prioritize.keys`
 
 Type: `string[]`
 
-If specified, keys in this array will be put at the first.
+Keys listed here are moved to the front, in the order given, before the remaining keys are sorted alphabetically.
+
+```js
+sortKeys(
+  { spec: {}, kind: "Deployment", metadata: {}, apiVersion: "apps/v1" },
+  { prioritize: { keys: ["apiVersion", "kind", "metadata"] } }
+);
+// => { apiVersion: "apps/v1", kind: "Deployment", metadata: {}, spec: {} }
+```
 
 ##### `option.prioritize.primitives`
 
 Type: `boolean`
 
-If true, primitive values (number, string, boolean, null, undefined) will be put at the first.
+When `true`, keys with primitive values (numbers, strings, booleans, `null`, `undefined`) are sorted before keys with object or array values.
+
+```js
+sortKeys(
+  { scripts: { build: "tsc" }, name: "my-app", version: "1.0.0", dependencies: { react: "^18.0.0" } },
+  { prioritize: { primitives: true } }
+);
+// => { name: "my-app", version: "1.0.0", dependencies: { react: "^18.0.0" }, scripts: { build: "tsc" } }
+```
 
 ##### `option.compare`
 
 Type: Function, `(object) => (leftKey: string, rightKey: string) => number`
 
-A higher-order function that returns a [comparator function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort).
+Custom sort logic. The outer function receives the object being sorted; the inner comparator receives two key names and returns a number, following the same convention as [`Array.prototype.sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort). When provided, `prioritize` options are ignored.
 
-## Examples
-
-See [test code](./src/index.test.ts) for examples.
+```js
+sortKeys(
+  { createdAt: "2024-01-01", id: 1, title: "Hello" },
+  {
+    compare: () => (left, right) => left.length - right.length || left.localeCompare(right),
+  }
+);
+// => { id: 1, title: "Hello", createdAt: "2024-01-01" }  (sorted by key length)
+```
 
 ## CLI
 
