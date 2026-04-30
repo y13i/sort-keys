@@ -15,4 +15,4 @@ jobs:
 
       - run: devbox run -- pnpm install --frozen-lockfile
       - run: devbox run -- pnpm run build
-      - run: devbox run -- pnpm publish --access=public
+      - run: devbox run -- pnpm publish --no-git-checks --access=public
