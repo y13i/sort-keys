@@ -42,7 +42,7 @@
 		"@emnapi/core": "1.10.0",
 		"@emnapi/runtime": "1.10.0",
 		"@types/js-yaml": "4.0.9",
-		"@types/node": "24.12.2",
+		"@types/node": "24.12.3",
 		"@vitest/ui": "4.1.5",
 		"js-yaml": "4.1.1",
 		"typescript": "6.0.3",
