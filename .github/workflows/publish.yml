@@ -14,6 +14,7 @@ jobs:
       - uses: jetify-com/devbox-install-action@v0.15.0
         with:
           enable-cache: false
-      - run: devbox run -- pnpm ci
+      - run: devbox run -- pnpm clean
+      - run: devbox run -- pnpm install --frozen-lockfile
       - run: devbox run -- pnpm run build
       - run: devbox run -- pnpm publish --no-git-checks --access=public
