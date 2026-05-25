@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: jetify-com/devbox-install-action@v0.15.0
         with:
-          enable-cache: false
+          enable-cache: "false"
       - run: devbox run -- pnpm install --frozen-lockfile
       - run: devbox run -- pnpm run build
       - run: devbox run -- pnpm publish --no-git-checks --access=public
