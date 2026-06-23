@@ -3,7 +3,9 @@
 	"extends": ["config:best-practices"],
 	"packageRules": [
 		{
-			"depTypeList": ["devDependencies"],
+			"matchDepTypes": [
+				"devDependencies"
+			],
 			"automerge": true
 		},
 		{
