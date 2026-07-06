@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.2",
 		"@emnapi/core": "1.11.1",
-		"@emnapi/runtime": "1.11.1",
+		"@emnapi/runtime": "1.11.2",
 		"@types/js-yaml": "4.0.9",
 		"@types/node": "24.13.2",
 		"@vitest/ui": "4.1.9",
