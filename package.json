@@ -38,7 +38,7 @@
 		"lint": "biome check"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.2",
+		"@biomejs/biome": "2.5.3",
 		"@emnapi/core": "1.11.2",
 		"@emnapi/runtime": "1.11.2",
 		"@types/js-yaml": "4.0.9",
