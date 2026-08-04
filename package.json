@@ -44,7 +44,7 @@
 		"@types/js-yaml": "4.0.9",
 		"@types/node": "24.13.3",
 		"@vitest/ui": "4.1.10",
-		"js-yaml": "5.2.2",
+		"js-yaml": "5.2.3",
 		"typescript": "7.0.2",
 		"vitest": "4.1.10"
 	},
