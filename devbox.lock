@@ -1,41 +1,51 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "corepack@0.36.0": {
-      "last_modified": "2026-10-28T22:04:29Z",
-      "resolved": "github:NixOS/nixpkgs/e62746b0b472753ef019baceab6f1e2e52014980#corepack",
+    "corepack@22.21.1": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#corepack",
       "source": "devbox-search",
-      "version": "0.36.0",
+      "version": "22.21.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/j284pbdjlm06qbwmwvpxb4ag7v456ibl-corepack-0.36.0",
+              "path": "/nix/store/c0k1s8f0hjvkkfhwdkghk7pxqvjcjzdq-corepack-nodejs-22.21.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/j284pbdjlm06qbwmwvpxb4ag7v456ibl-corepack-0.36.0"
+          "store_path": "/nix/store/c0k1s8f0hjvkkfhwdkghk7pxqvjcjzdq-corepack-nodejs-22.21.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/1y25s88n0qibgj78waqymndkgs3qfsgz-corepack-0.36.0",
+              "path": "/nix/store/9a2wk2kqpb9977igy2b1jl5y8ldwgkc1-corepack-nodejs-22.21.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/1y25s88n0qibgj78waqymndkgs3qfsgz-corepack-0.36.0"
+          "store_path": "/nix/store/9a2wk2kqpb9977igy2b1jl5y8ldwgkc1-corepack-nodejs-22.21.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hbrw2p05b6gsz24hp4vsm1jq3xr7pg89-corepack-nodejs-22.21.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hbrw2p05b6gsz24hp4vsm1jq3xr7pg89-corepack-nodejs-22.21.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/0xqs57z50ys793m9fp7v6ri4ymd81kq8-corepack-0.36.0",
+              "path": "/nix/store/l93jdmcya847cx0kz4bglnmnvqcfizw8-corepack-nodejs-22.21.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/0xqs57z50ys793m9fp7v6ri4ymd81kq8-corepack-0.36.0"
+          "store_path": "/nix/store/l93jdmcya847cx0kz4bglnmnvqcfizw8-corepack-nodejs-22.21.1"
         }
       }
     },
