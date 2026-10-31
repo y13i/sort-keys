@@ -56,6 +56,59 @@ describe("sortKeys()", () => {
 		expect(Object.keys(result.c[1])).toEqual(["d", "e", "f"]);
 	});
 
+	it("should sort keys in objects with null prototype", () => {
+		const nullPrototypeObject = Object.assign(Object.create(null), {
+			b: 1,
+			a: 2,
+		});
+
+		const result = sortKeys({ x: nullPrototypeObject });
+		expect(Object.keys(result.x)).toEqual(["a", "b"]);
+	});
+
+	it("should keep non-plain objects as they are", () => {
+		class Point {
+			y = 2;
+			x = 1;
+		}
+
+		const date = new Date("2024-01-01T00:00:00Z");
+		const map = new Map([["b", 1]]);
+		const set = new Set([1, 2]);
+		const regExp = /a/g;
+		const uint8Array = new Uint8Array([1, 2]);
+		const point = new Point();
+
+		const result = sortKeys({
+			point,
+			uint8Array,
+			regExp,
+			set,
+			map,
+			date,
+			nested: [{ date }],
+		});
+
+		expect(Object.keys(result)).toEqual([
+			"date",
+			"map",
+			"nested",
+			"point",
+			"regExp",
+			"set",
+			"uint8Array",
+		]);
+
+		expect(result.date).toBe(date);
+		expect(result.map).toBe(map);
+		expect(result.set).toBe(set);
+		expect(result.regExp).toBe(regExp);
+		expect(result.uint8Array).toBe(uint8Array);
+		expect(result.point).toBe(point);
+		expect(Object.keys(result.point)).toEqual(["y", "x"]);
+		expect(result.nested[0].date).toBe(date);
+	});
+
 	describe("option", () => {
 		describe("option.depth", () => {
 			it("should sort keys in nested objects up to the given depth", () => {
