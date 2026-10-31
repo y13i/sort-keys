@@ -48,8 +48,8 @@ Limits how many levels deep to recursively sort. `1` sorts only the top-level ob
 
 ```js
 sortKeys(
-  { version: 1, author: { name: "Alice", email: "alice@example.com" } },
-  { depth: 1 }
+	{ version: 1, author: { name: "Alice", email: "alice@example.com" } },
+	{ depth: 1 },
 );
 // => { author: { name: "Alice", email: "alice@example.com" }, version: 1 }
 // (nested object left unsorted)
@@ -63,8 +63,8 @@ Keys listed here are moved to the front, in the order given, before the remainin
 
 ```js
 sortKeys(
-  { spec: {}, kind: "Deployment", metadata: {}, apiVersion: "apps/v1" },
-  { prioritize: { keys: ["apiVersion", "kind", "metadata"] } }
+	{ spec: {}, kind: "Deployment", metadata: {}, apiVersion: "apps/v1" },
+	{ prioritize: { keys: ["apiVersion", "kind", "metadata"] } },
 );
 // => { apiVersion: "apps/v1", kind: "Deployment", metadata: {}, spec: {} }
 ```
@@ -77,8 +77,13 @@ When `true`, keys with primitive values (numbers, strings, booleans, `null`, `un
 
 ```js
 sortKeys(
-  { scripts: { build: "tsc" }, name: "my-app", version: "1.0.0", dependencies: { react: "^18.0.0" } },
-  { prioritize: { primitives: true } }
+	{
+		scripts: { build: "tsc" },
+		name: "my-app",
+		version: "1.0.0",
+		dependencies: { react: "^18.0.0" },
+	},
+	{ prioritize: { primitives: true } },
 );
 // => { name: "my-app", version: "1.0.0", dependencies: { react: "^18.0.0" }, scripts: { build: "tsc" } }
 ```
@@ -91,10 +96,11 @@ Custom sort logic. The outer function receives the object being sorted; the inne
 
 ```js
 sortKeys(
-  { createdAt: "2024-01-01", id: 1, title: "Hello" },
-  {
-    compare: () => (left, right) => left.length - right.length || left.localeCompare(right),
-  }
+	{ createdAt: "2024-01-01", id: 1, title: "Hello" },
+	{
+		compare: () => (left, right) =>
+			left.length - right.length || left.localeCompare(right),
+	},
 );
 // => { id: 1, title: "Hello", createdAt: "2024-01-01" }  (sorted by key length)
 ```
