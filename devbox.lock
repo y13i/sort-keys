@@ -1,6 +1,44 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "corepack@0.36.0": {
+      "last_modified": "2026-10-28T22:04:29Z",
+      "resolved": "github:NixOS/nixpkgs/e62746b0b472753ef019baceab6f1e2e52014980#corepack",
+      "source": "devbox-search",
+      "version": "0.36.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/j284pbdjlm06qbwmwvpxb4ag7v456ibl-corepack-0.36.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/j284pbdjlm06qbwmwvpxb4ag7v456ibl-corepack-0.36.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1y25s88n0qibgj78waqymndkgs3qfsgz-corepack-0.36.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1y25s88n0qibgj78waqymndkgs3qfsgz-corepack-0.36.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0xqs57z50ys793m9fp7v6ri4ymd81kq8-corepack-0.36.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/0xqs57z50ys793m9fp7v6ri4ymd81kq8-corepack-0.36.0"
+        }
+      }
+    },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2026-10-26T12:37:34Z",
       "resolved": "github:NixOS/nixpkgs/c4c49d9b94a6e75984cbb517136ca2b8566cad9f?lastModified=1793018254&narHash=sha256-8PoNCW0I6442h%2Bh%2BR2hvSlNdxqAf6TT1yk%2BdycToFjA%3D"
