@@ -18,6 +18,14 @@ function isPrimitive(value: unknown): boolean {
 	);
 }
 
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+	if (typeof value !== "object" || value === null) return false;
+
+	const prototype = Object.getPrototypeOf(value);
+
+	return prototype === Object.prototype || prototype === null;
+}
+
 function recurse(
 	value: unknown,
 	option: Option & { depth: number; compare: CompareFunctionGenerator },
@@ -30,13 +38,13 @@ function recurse(
 		return value.map((element) => recurse(element, nextRecursionOption));
 	}
 
-	const object = value as Record<string, unknown>;
+	if (!isPlainObject(value)) return value;
 
-	const keys = Object.keys(object).toSorted(option.compare(object));
+	const keys = Object.keys(value).toSorted(option.compare(value));
 
 	return Object.fromEntries(
 		keys.map((key) => {
-			return [key, recurse(object[key], nextRecursionOption)];
+			return [key, recurse(value[key], nextRecursionOption)];
 		}),
 	);
 }
