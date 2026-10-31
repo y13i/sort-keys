@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"rootDir": "./src",
 		"declaration": false,
 		"declarationMap": false,
 		"sourceMap": false,
@@ -16,5 +15,6 @@
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
 		"skipLibCheck": true
-	}
+	},
+	"include": ["src/**/*.ts", "vitest.config.ts"]
 }

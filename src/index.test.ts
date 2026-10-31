@@ -1,7 +1,7 @@
 import { dump, load } from "js-yaml";
 import { describe, expect, it, test } from "vitest";
 
-import { sortKeys } from ".";
+import { sortKeys } from "./index.js";
 
 test("make sure Object.keys() can be used to test", () => {
 	expect(Object.keys({ a: 1, b: 2 })).toEqual(["a", "b"]);
