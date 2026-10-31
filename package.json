@@ -35,7 +35,8 @@
 		"test": "vitest run",
 		"watch": "vitest",
 		"build": "tsc --project tsconfig.build.json --module NodeNext --target esnext --declaration true --declarationMap true --outDir ./dist",
-		"lint": "biome check"
+		"lint": "biome check",
+		"typecheck": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.6.4",
