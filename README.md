@@ -63,10 +63,20 @@ Keys listed here are moved to the front, in the order given, before the remainin
 
 ```js
 sortKeys(
-	{ spec: {}, kind: "Deployment", metadata: {}, apiVersion: "apps/v1" },
+	{
+		apiVersion: "v1",
+		data: { LOG_LEVEL: "info" },
+		kind: "ConfigMap",
+		metadata: { name: "app-config" },
+	},
 	{ prioritize: { keys: ["apiVersion", "kind", "metadata"] } },
 );
-// => { apiVersion: "apps/v1", kind: "Deployment", metadata: {}, spec: {} }
+// => {
+// 	apiVersion: "v1",
+// 	kind: "ConfigMap",
+// 	metadata: { name: "app-config" },
+// 	data: { LOG_LEVEL: "info" },
+// }
 ```
 
 ##### `option.prioritize.primitives`
@@ -78,14 +88,19 @@ When `true`, keys with primitive values (numbers, strings, booleans, `null`, `un
 ```js
 sortKeys(
 	{
-		scripts: { build: "tsc" },
-		name: "my-app",
-		version: "1.0.0",
 		dependencies: { react: "^18.0.0" },
+		name: "my-app",
+		scripts: { build: "tsc" },
+		version: "1.0.0",
 	},
 	{ prioritize: { primitives: true } },
 );
-// => { name: "my-app", version: "1.0.0", dependencies: { react: "^18.0.0" }, scripts: { build: "tsc" } }
+// => {
+// 	name: "my-app",
+// 	version: "1.0.0",
+// 	dependencies: { react: "^18.0.0" },
+// 	scripts: { build: "tsc" },
+// }
 ```
 
 ##### `option.compare`
