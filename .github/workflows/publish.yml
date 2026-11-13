@@ -10,8 +10,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: jetify-com/devbox-install-action@05e954310554b6122a26b4880d69937f61b1eb2e # v0.16.0
+      - uses: actions/checkout@v7.0.1
+      - uses: jetify-com/devbox-install-action@v0.16.0
         with:
           enable-cache: "false"
       - run: devbox run -- pnpm ci
