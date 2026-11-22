@@ -3,5 +3,8 @@
 	"packages": ["nodejs@26.13.1", "corepack@22.21.1"],
 	"env": {
 		"DEVBOX_COREPACK_ENABLED": "true"
+	},
+	"shell": {
+		"init_hook": "pnpm install --frozen-lockfile"
 	}
 }
