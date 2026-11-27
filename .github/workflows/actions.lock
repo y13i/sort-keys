@@ -8,7 +8,7 @@ workflows:
         - 'jetify-com/devbox-install-action@v0.16.0'
     '.github/workflows/renovate.yml':
         - 'actions/create-github-app-token@v3.4.0'
-        - 'renovatebot/github-action@v47.0.0'
+        - 'renovatebot/github-action@v48.0.0'
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
         - 'jetify-com/devbox-install-action@v0.16.0'
@@ -35,8 +35,8 @@ dependencies:
         repo_id: 585689121
         uses:
             - 'actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306'
-    'renovatebot/github-action@v47.0.0':
-        ref: 'v47.0.0'
-        commit: 'sha1-7b402fe76b7bc4273576663a09be2f0f85266e2f'
+    'renovatebot/github-action@v48.0.0':
+        ref: 'v48.0.0'
+        commit: 'sha1-1376d90bcd3a4d4e7393ae762eea56ac684aee38'
         owner_id: 38656520
         repo_id: 252754603
